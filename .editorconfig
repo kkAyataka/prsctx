@@ -1,0 +1,21 @@
+[*]
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.rs]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+
+[*.toml]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+
+[*.md]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
