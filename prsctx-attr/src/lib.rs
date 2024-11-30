@@ -12,14 +12,13 @@ use syn::{parse_macro_input, ItemFn, Stmt};
 #[proc_macro_attribute]
 pub fn mark(_attr: TokenStream, item: TokenStream) -> TokenStream {
     let mut ast = parse_macro_input!(item as ItemFn);
-    let _ident = &ast.sig.ident;
+    let ident = &ast.sig.ident;
     let new_stmt = quote! {
-        prsctx::mark!(stringify!(#_ident));
+        prsctx::mark!(stringify!(#ident));
     };
     let new_stmt: TokenStream = new_stmt.into();
     let new_stmt = parse_macro_input!(new_stmt as Stmt);
 
-    //ast.block.stmts.clear();
     ast.block.stmts.insert(0, new_stmt);
 
     let gen = quote! {

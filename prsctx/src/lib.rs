@@ -13,7 +13,7 @@ pub struct Context {
     pub name: String,
     pub file_name: String,
     pub line_no: u32,
-    pub  module_path: String,
+    pub module_path: String,
 }
 
 thread_local!(static CONTEXT_STACK:RefCell<Vec<Context>> = RefCell::<Vec<Context>>::new(vec![]));
